@@ -26,6 +26,12 @@
         <org.slf4j.version>1.7.3</org.slf4j.version>
         <org.springframework.version>3.0.7.RELEASE</org.springframework.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        
+        <sonar.projectKey>51260_DevSecOps</sonar.projectKey>
+        <sonar.organization>51260</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.login>4a29c41d74981228418dec87b0c210a696349c79</sonar.login>
+        <sonar.exclusions>dependency-check-report.*</sonar.exclusions>
     </properties>
 
     <!--
