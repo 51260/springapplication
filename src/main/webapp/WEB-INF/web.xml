@@ -24,7 +24,7 @@
 
     <!-- Listeners -->
     <listener>
-        <description>Pulls in logging configuration to the web application</description>
+        <description>Pulls i logging configuration to the web application</description>
         <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
     </listener>
 </web-app>
