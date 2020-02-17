@@ -32,7 +32,10 @@
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <sonar.login>4a29c41d74981228418dec87b0c210a696349c79</sonar.login>
         <sonar.exclusions>dependency-check-report.*</sonar.exclusions>
-    </properties>
+        <sonar.java.spotbugs.reportPaths>./target/spotbugsXml.xml</sonar.java.spotbugs.reportPaths>
+        <sonar.java.pmd.reportPaths>./target/pmd.xml</sonar.java.pmd.reportPaths>
+        <sonar.java.checkstyle.reportPaths>./target/checkstyle-result.xml</sonar.java.checkstyle.reportPaths>
+  
 
     <!--
         Dependencies are all the different java libraries we depend on.
@@ -124,7 +127,30 @@
             </plugin>
           </plugins>
         </configuration>
-      </plugin>
+      </plugin>          
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-pmd-plugin</artifactId>
+          <version>3.10.0</version>
+        </plugin>
+        <plugin>
+      <groupId>com.github.spotbugs</groupId>
+      <artifactId>spotbugs-maven-plugin</artifactId>
+      <version>3.1.1</version>
+      <configuration>
+        <effort>Max</effort>
+        <threshold>Low</threshold>
+        <failOnError>true</failOnError>
+        <includeFilterFile>${session.executionRootDirectory}/spotbugs-include.xml</includeFilterFile>
+        <plugins>
+          <plugin>
+            <groupId>com.h3xstream.findsecbugs</groupId>
+            <artifactId>findsecbugs-plugin</artifactId>
+            <version>LATEST</version> <!-- Auto-update to the latest stable -->
+          </plugin>
+        </plugins>
+      </configuration>
+    </plugin>
         </plugins>
     </build>
 </project>
