@@ -126,6 +126,18 @@
                         <artifactId>findsecbugs-plugin</artifactId>
                         <version>1.9.0</version>
                     </plugin>
+                               <plugin>
+              <groupId>org.owasp</groupId>
+              <artifactId>dependency-check-maven</artifactId>
+              <version>5.3.0</version>
+              <executions>
+                  <execution>
+                      <goals>
+                          <goal>check</goal>
+                      </goals>
+                  </execution>
+              </executions>
+            </plugin>
                 </plugins>
             </configuration>
         </plugin>
